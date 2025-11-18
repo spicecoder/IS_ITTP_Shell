@@ -1,0 +1,113 @@
+ronabpal@Pronabs-devbook coregofiles % mkdir wrk1
+pronabpal@Pronabs-devbook coregofiles % nkdir wrk2
+zsh: command not found: nkdir
+pronabpal@Pronabs-devbook coregofiles % mkdir wrk2
+pronabpal@Pronabs-devbook coregofiles % ./gobash 
+🚀 gobash - IPTP Shell Process Manager
+   Type 'help' for commands, 'exit' to quit
+
+[shell_15833] ~/QuickLab/gobashiles/coreshell/coregofiles$ help
+gobash - IPTP Shell Process Manager
+
+Built-in Commands:
+  name [INTENTION]    - Name current process with intention
+  goto PATH           - Navigate to path (supports wildcards)
+  getmethere          - Interactive directory finder
+  save                - Save current state
+  list                - List all saved processes
+  jump PROCESS        - Jump to saved process location
+  back                - Go back in navigation history
+  state               - Show current state in IPTP format
+  help                - Show this help
+  exit                - Exit gobash
+
+Execute Scripts:
+  ./script.sh         - Run any script in gobash context
+  command args        - Run any system command
+
+Examples:
+  name "working on authentication"
+  goto /var/www
+  goto '*nginx*'
+  getmethere
+  jump webdev
+
+[shell_15833] ~/QuickLab/gobashiles/coreshell/coregofiles$ goto wrk1
+✓ Changed to: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+[shell_15833] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ save test1
+✓ Saved state for: shell_15833 @ /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+[shell_15833] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ list
+=== Available Processes ===
+  → shell_15833: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1 (PID: 15833)
+  → shell_82941: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 82941)
+  → shell_99422: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 99422)
+[shell_15833] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ name test1
+✓ Shell named: test1
+  Intention: test1
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ exit
+
+Goodbye!
+pronabpal@Pronabs-devbook coregofiles % ./gobash
+🚀 gobash - IPTP Shell Process Manager
+   Type 'help' for commands, 'exit' to quit
+
+[shell_22482] ~/QuickLab/gobashiles/coreshell/coregofiles$ name test2
+✓ Shell named: test2
+  Intention: test2
+[test2] ~/QuickLab/gobashiles/coreshell/coregofiles$ goto wrk2
+✓ Changed to: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk2
+[test2] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ ls
+[test2] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ exit
+
+Goodbye!
+pronabpal@Pronabs-devbook coregofiles % list
+zsh: command not found: list
+pronabpal@Pronabs-devbook coregofiles % ./gobash
+🚀 gobash - IPTP Shell Process Manager
+   Type 'help' for commands, 'exit' to quit
+
+[shell_25102] ~/QuickLab/gobashiles/coreshell/coregofiles$ list
+=== Available Processes ===
+  → test2: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk2 (PID: 22482)
+  → shell_25102: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 25102)
+  → shell_15833: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1 (PID: 15833)
+  → shell_22482: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 22482)
+  → shell_82941: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 82941)
+  → shell_99422: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles (PID: 99422)
+  → test1: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1 (PID: 15833)
+[shell_25102] ~/QuickLab/gobashiles/coreshell/coregofiles$ jump test1
+✓ Jumped to test1 @ /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ ./gobash
+✗ Error executing command: fork/exec ./gobash: no such file or directory
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ ls
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ cd ..
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ ls
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ cd ..
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ cd ..
+
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ getmethere
+Hello, pronabpal! Where would you like to work today?
+Enter the directory name: wrk1
+
+Found 1 matching directories:
+  1) /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+
+Enter number (or 'q' to quit): 1
+✓ Changed to: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk1$ getmethere
+Hello, pronabpal! Where would you like to work today?
+Enter the directory name: wrk
+
+Found 2 matching directories:
+  1) /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk1
+  2) /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk2
+
+Enter number (or 'q' to quit): 2
+✓ Changed to: /Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk2
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ mkdir wtest
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ ls
+wtest
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ cd wtest      
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ pwd
+/Users/pronabpal/QuickLab/gobashiles/coreshell/coregofiles/wrk2
+[test1] ~/QuickLab/gobashiles/coreshell/coregofiles/wrk2$ 
