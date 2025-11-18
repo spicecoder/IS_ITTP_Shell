@@ -30,7 +30,7 @@ iptp goto /path
 
 ## Installation
 
-### macOS (Your Machine!)
+### macOS 
 
 **Option 1: Apple Silicon (M1/M2/M3)**
 ```bash
