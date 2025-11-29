@@ -1,0 +1,59 @@
+=== WiFi Detection Test ===
+
+1. Testing networksetup on en0:
+You are not associated with an AirPort network.
+
+2. Testing networksetup on en1:
+en1 is not a Wi-Fi interface.
+** Error: Error obtaining wireless information.
+
+3. Testing airport command:
+
+4. Testing ifconfig en0:
+	status: active
+
+5. All hardware ports:
+
+Hardware Port: Thunderbolt Bridge
+Device: bridge0
+Ethernet Address: 82:39:d9:a4:e4:01
+
+Hardware Port: Wi-Fi
+Device: en0
+Ethernet Address: f8:ff:c2:44:12:a7
+
+Hardware Port: Thunderbolt 1
+Device: en1
+Ethernet Address: 82:39:d9:a4:e4:01
+
+Hardware Port: Thunderbolt 2
+Device: en2
+Ethernet Address: 82:39:d9:a4:e4:00
+
+Hardware Port: Thunderbolt 3
+Device: en3
+Ethernet Address: 82:39:d9:a4:e4:05
+
+Hardware Port: Thunderbolt 4
+Device: en4
+Ethernet Address: 82:39:d9:a4:e4:04
+
+VLAN Configurations
+===================
+
+6. Which interface is active:
+	status: active
+awdl0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 06:0a:98:6b:bc:6c
+	inet6 fe80::40a:98ff:fe6b:bc6c%awdl0 prefixlen 64 scopeid 0x7 
+	nd6 options=201<PERFORMNUD,DAD>
+--
+	status: active
+llw0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether 06:0a:98:6b:bc:6c
+	inet6 fe80::40a:98ff:fe6b:bc6c%llw0 prefixlen 64 scopeid 0x8 
+	nd6 options=201<PERFORMNUD,DAD>
+--
+	status: active
